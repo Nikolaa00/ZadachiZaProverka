@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+void printArray(int arrayOne[9])
+{
+    for (int i = 0; i < 9; i++)
+        {
+        cout << arrayOne[i] << " , ";
+        }
+    cout << endl;
+}
+void transformArrayIntoMatrix(int matrixOne[3][3],int arrayOne[9])
+{
+    for(int i=0,j=0,q=0; i<9; i++)
+        {
+        matrixOne[q][j]=arrayOne[i];
+
+        j++;
+
+        if((i+1)%3==0)
+            {
+            q++;
+            j=0;
+            }
+        }
+}
+
+int main()
+{
+    int arrayOne[9]= {168,70,40,30,11,5,8,7,2};
+    int matrixOne[3][3];
+
+    cout<<"Dadenata matrica e :"<<endl;
+    printArray(arrayOne);
+
+    cout << "Nizata pretvorena vo matrica" << endl;
+
+    for(int i=0; i<3; i++)
+        {
+        for(int j=0; j<3; j++)
+            {
+            cout<<matrixOne[i][j]<<"\t";
+            }
+        cout<<endl;
+        }
+    return 0;
+}
